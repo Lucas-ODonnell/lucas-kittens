@@ -1,0 +1,19 @@
+<h2 class="title is-2"><center><%= @kitten.name %><center></h2>
+<div class="border">
+  <h3 class="subtitle is-4">
+    Age: 
+    <%= @kitten.age %>
+  </h3>
+  <h3>
+    Cuteness: 
+    <%= @kitten.cuteness %>
+  </h3>
+  <h3>
+    Softness:
+    <%= @kitten.softness %>
+  </h3>
+  <p><%= link_to "Edit kitten", edit_kitten_path(@kitten), class: "button is-info" %></p>
+  <p><%= link_to "Delete kitten", kitten_path(@kitten), method: :delete, data: {confirm: "Are you sure you want to delete this kitten?"}, class: "button is-dangerous" %></p>
+</div>
+<%= link_to 'All kittens', root_path, class: "button is-show"%> 
+

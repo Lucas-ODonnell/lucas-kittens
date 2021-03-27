@@ -1,0 +1,33 @@
+<%= form_with model: @kitten, local:true do |form| %>
+  <div>
+    <%= form.label :name, "Name:" %>
+    <%= form.text_field :name  %>
+  </div>
+  <br >
+  <div>
+    <%= form.label :age, "Age:" %>
+    <%= form.number_field :age, in: 1..30, step: 1 %>
+  </div>
+  <br >
+  <div>
+    <%= form.label :cuteness, "How cute is your cat?:" %>
+    <%= form.text_area :cuteness %>
+  </div>
+  <br >
+  <div>
+    <%= form.label :softness, "How soft is your cat?:" %>
+    <%= form.text_area :softness %>
+  </div>
+  <br >
+  <div>
+    <%= form.submit %>
+  </div>
+  <% if @kitten.errors.any? %>
+    <ul>
+      <% @kitten.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+

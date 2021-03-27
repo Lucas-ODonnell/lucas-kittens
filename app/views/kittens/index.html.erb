@@ -1,0 +1,24 @@
+<h1> All Kittens </h1>
+<p class="button is-info"><%= link_to 'New Kitten', new_kitten_path %></p>
+<% @kittens.each do |kitten| %>
+  <div class= "border">
+    <h3>
+      Kitty name:
+      <%= kitten.name %>
+    </h3>
+    <div class = "block">
+      <p>
+      <span>
+        <i></i>
+      </span>
+      Age: 
+      <%= kitten.age %>
+      </p>
+    </div>
+    <div class="button is-info">
+      <%= link_to 'Kitty Details', kitten_path(id: kitten.id) %>
+    </div>
+  </div>
+</div>
+<br />
+<% end %>
