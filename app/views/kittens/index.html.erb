@@ -1,3 +1,8 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
 <h1> All Kittens </h1>
 <p class="button is-info"><%= link_to 'New Kitten', new_kitten_path %></p>
 <% @kittens.each do |kitten| %>
