@@ -1,6 +1,11 @@
 class KittensController < ApplicationController
   def index
     @kittens = Kitten.all
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @kittens }
+      format.json { render json: @kittens }
+    end
   end
 
   def new
@@ -20,6 +25,11 @@ class KittensController < ApplicationController
 
   def show
     @kitten = Kitten.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @kitten }
+      format.json { render xml: @kitten }
+    end
   end
 
   def edit
